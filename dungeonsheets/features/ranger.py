@@ -6,7 +6,7 @@ import gettext
 import os
 
 try:
-    localedir = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'locale')
+    localedir = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, 'locale')))
     lang = gettext.translation('ranger', localedir)
     lang.install()
 except FileNotFoundError:
